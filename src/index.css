@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F5D97A;
+  --gold-dark: #9A7B0A;
+  --black: #000000;
+  --dark: #0a0a0a;
+  --dark-2: #111111;
+  --dark-3: #1a1a1a;
+  --dark-4: #222222;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a0a0a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Barlow', system-ui, sans-serif;
+  background-color: var(--dark);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Gold text utility */
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+/* Gold gradient text */
+.gold-text-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D97A 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Display font */
+.font-display {
+  font-family: 'Bebas Neue', Impact, sans-serif;
+}
+
+/* Gold border */
+.border-gold {
+  border-color: var(--gold);
+}
+
+/* Gold button */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D97A 50%, #D4AF37 100%);
+  background-size: 200% auto;
+  color: #000;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.1em;
+  transition: background-position 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Card hover effect */
+.moto-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.2);
+}
+
+/* Gold line decorator */
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+}
+
+/* Noise texture overlay */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+/* Animate fade up */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeUp 0.6s ease 0.1s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.6s ease 0.2s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeUp 0.6s ease 0.3s both;
+}
+
+/* Image placeholder */
+.img-placeholder {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Section styles */
+.section-dark {
+  background-color: var(--dark);
+}
+
+.section-dark-2 {
+  background-color: var(--dark-2);
+}
+
+/* Input styles */
+.input-dark {
+  background-color: var(--dark-3);
+  border: 1px solid #333;
+  color: var(--text-primary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-dark:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.input-dark::placeholder {
+  color: #555;
+}
