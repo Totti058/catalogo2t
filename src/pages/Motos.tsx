@@ -49,18 +49,18 @@ export default function Motos() {
         </div>
       </section>
 
-      <section className={`px-4 py-3 bg-[#0d0d0d] border-b border-[#1a1a1a] sticky top-16 md:top-20 z-30 backdrop-blur-md ${isScrolled ? 'hidden md:block' : ''}`}>
+      <section className={`px-5 py-4 bg-[#0d0d0d] border-b border-[#1a1a1a] sticky top-16 md:top-20 z-30 backdrop-blur-md transition-all duration-300 ${isScrolled ? 'opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto' : 'opacity-100'}`}>
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2">
+          <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3">
 
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-3 flex-wrap">
               <span className="text-gray-600 text-[10px] tracking-[0.3em] uppercase font-body font-500">CC:</span>
               <div className="flex gap-1.5 flex-wrap">
                 {cilindrajeOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => setFiltroCC(opt)}
-                    className={`px-2 py-1 text-[10px] tracking-widest uppercase font-body transition-all duration-200 ${
+                    className={`px-3 py-1.5 text-xs tracking-widest uppercase font-body transition-all duration-200 ${
                       filtroCC === opt
                         ? 'filter-btn-active'
                         : 'filter-btn-inactive'
@@ -81,7 +81,7 @@ export default function Motos() {
                   <button
                     key={opt}
                     onClick={() => setFiltroMarca(opt)}
-                    className={`px-2 py-1 text-[10px] tracking-widest uppercase font-body transition-all duration-200 ${
+                    className={`px-3 py-1.5 text-xs tracking-widest uppercase font-body transition-all duration-200 ${
                       filtroMarca === opt
                         ? 'filter-btn-active'
                         : 'filter-btn-inactive'
