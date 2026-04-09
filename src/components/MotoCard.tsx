@@ -20,11 +20,9 @@ export default function MotoCard({ moto, index = 0 }: MotoCardProps) {
     <div
       className={`moto-card group bg-[#111111] border border-[#1e1e1e] hover:border-gold-600/40 overflow-hidden relative ${delayClass}`}
     >
-      {/* Gold accent top line — visible on hover */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-      {/* Image container */}
-      <div className="relative overflow-hidden h-56 sm:h-64 img-placeholder">
+      <div className="relative overflow-hidden h-70 sm:h-70 aspect-[4/3] img-placeholder">
         <img
           src={moto.imagen}
           alt={moto.nombre}
@@ -52,35 +50,28 @@ export default function MotoCard({ moto, index = 0 }: MotoCardProps) {
           }}
         />
 
-        {/* Cilindraje badge */}
         <div className="absolute top-3 right-3 bg-black/85 backdrop-blur-sm border border-gold-600/50 px-2.5 py-1 rounded-md z-10">
           <span className="font-display text-gold-500 text-sm tracking-widest">
             {moto.cilindraje}cc
           </span>
         </div>
 
-        {/* Marca badge */}
         <div className="absolute top-3 left-3 bg-black/75 backdrop-blur-sm border border-[#2e2e2e] px-2.5 py-1 rounded-md z-10">
           <span className="text-gray-300 text-[10px] font-body font-600 tracking-widest uppercase">
             {moto.marca}
           </span>
         </div>
 
-        {/* Dark gradient overlay at bottom */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-60" />
 
-        {/* Hover overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
       </div>
 
-      {/* Card body */}
       <div className="p-5">
-        {/* Name */}
         <h3 className="font-display text-2xl md:text-[1.6rem] text-white tracking-wider leading-tight mb-1.5 group-hover:text-gold-300 transition-colors duration-300">
           {moto.nombre}
         </h3>
 
-        {/* Subtitle line */}
         <div className="flex items-center gap-2 mb-5">
           <div className="gold-line" style={{ width: '24px', height: '2px' }} />
           <span className="text-gray-500 text-[10px] font-body font-500 tracking-[0.2em] uppercase">
@@ -88,7 +79,6 @@ export default function MotoCard({ moto, index = 0 }: MotoCardProps) {
           </span>
         </div>
 
-        {/* Price + CTA */}
         <div className="flex items-end justify-between gap-3">
           <div className="min-w-0">
             <p className="text-gray-600 text-[9px] tracking-[0.3em] uppercase font-body mb-0.5">
@@ -111,7 +101,6 @@ export default function MotoCard({ moto, index = 0 }: MotoCardProps) {
         </div>
       </div>
 
-      {/* Bottom hover bar */}
       <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold-700 via-gold-400 to-gold-700 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
     </div>
   );

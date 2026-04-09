@@ -20,7 +20,6 @@ export default function Contact() {
     setLoading(true);
     console.log('Formulario enviado:', form);
 
-    // Simulate send
     setTimeout(() => {
       setLoading(false);
       setEnviado(true);
@@ -31,9 +30,6 @@ export default function Contact() {
   return (
     <main className="min-h-screen pt-20 bg-[#0a0a0a]">
 
-      {/* ════════════════════════════════════
-          PAGE HEADER
-      ════════════════════════════════════ */}
       <section className="relative py-20 md:py-24 px-6 bg-black border-b border-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/4 rounded-full blur-3xl" />
@@ -50,13 +46,9 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════
-          MAIN CONTENT
-      ════════════════════════════════════ */}
       <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
 
-          {/* LEFT: Contact info */}
           <div className="lg:col-span-2 space-y-6 animate-fade-up">
             <div>
               <h2 className="font-display text-3xl md:text-4xl text-white tracking-widest mb-3 leading-none">
@@ -68,7 +60,6 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* Phone — prominente */}
             <div className="contact-info-card p-6 group">
               <p className="text-gray-600 text-[10px] tracking-[0.4em] uppercase font-body mb-2">
                 Teléfono · WhatsApp
@@ -84,12 +75,11 @@ export default function Contact() {
               </p>
             </div>
 
-            {/* WhatsApp CTA */}
             <a
               href="https://wa.me/573007442878"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-gold px-6 py-4 text-sm tracking-widest uppercase font-display text-lg flex items-center justify-center gap-3 w-full rounded-lg"
+              className="btn-gold px-6 py-4 tracking-widest uppercase font-display text-lg flex items-center justify-center gap-3 w-full rounded-lg"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -97,7 +87,6 @@ export default function Contact() {
               Chatear por WhatsApp
             </a>
 
-            {/* Info rows */}
             <div className="space-y-5 pt-4 border-t border-[#1a1a1a]">
               {[
                 { icon: '📍', label: 'Ubicación', value: 'Colombia · Atención nacional' },
@@ -119,10 +108,8 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* RIGHT: Form */}
           <div className="lg:col-span-3 animate-fade-up-delay-1">
             <div className="bg-[#0e0e0e] border border-[#1e1e1e] rounded-2xl p-8 md:p-10 relative overflow-hidden">
-              {/* Top gold line */}
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-600/50 to-transparent" />
 
               {enviado ? (
@@ -141,7 +128,7 @@ export default function Contact() {
                   </p>
                   <button
                     onClick={() => setEnviado(false)}
-                    className="btn-gold px-8 py-3 text-sm tracking-widest uppercase font-display text-base rounded-md"
+                    className="btn-gold px-8 py-3 tracking-widest uppercase font-display text-base rounded-md"
                   >
                     Enviar otro mensaje
                   </button>
@@ -154,7 +141,6 @@ export default function Contact() {
                   <div className="gold-line mb-8" style={{ width: '28px', height: '2px' }} />
 
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Nombre */}
                     <div>
                       <label className="block text-gray-500 text-[9px] tracking-[0.35em] uppercase font-body mb-2">
                         Nombre completo *
@@ -170,7 +156,6 @@ export default function Contact() {
                       />
                     </div>
 
-                    {/* Email */}
                     <div>
                       <label className="block text-gray-500 text-[9px] tracking-[0.35em] uppercase font-body mb-2">
                         Correo electrónico *
@@ -186,7 +171,6 @@ export default function Contact() {
                       />
                     </div>
 
-                    {/* Mensaje */}
                     <div>
                       <label className="block text-gray-500 text-[9px] tracking-[0.35em] uppercase font-body mb-2">
                         Mensaje *
@@ -202,11 +186,10 @@ export default function Contact() {
                       />
                     </div>
 
-                    {/* Submit */}
                     <button
                       type="submit"
                       disabled={loading}
-                      className="btn-gold w-full py-4 text-sm tracking-widest uppercase font-display text-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3 rounded-lg"
+                      className="btn-gold w-full py-4 tracking-widest uppercase font-display text-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3 rounded-lg"
                     >
                       {loading ? (
                         <>
@@ -237,9 +220,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ════════════════════════════════════
-          BOTTOM BANNER
-      ════════════════════════════════════ */}
       <section className="py-12 px-6 bg-[#0d0d0d] border-t border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
@@ -254,7 +234,7 @@ export default function Contact() {
             href="https://wa.me/573007442878"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold px-8 py-3.5 text-sm tracking-widest uppercase font-display text-lg rounded-md flex items-center gap-2"
+            className="btn-gold px-8 py-3.5 tracking-widest uppercase font-display text-lg rounded-md flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>

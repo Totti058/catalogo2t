@@ -16,7 +16,6 @@ export default function Navbar() {
     setMenuOpen(false);
   }, [location]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -39,7 +38,6 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
 
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
             <div className="relative flex items-center justify-center w-9 h-9">
               <div className="absolute inset-0 border-2 border-gold-500 rotate-45 group-hover:rotate-[55deg] transition-transform duration-400" />
@@ -57,7 +55,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(({ to, label }) => (
               <NavLink
@@ -97,7 +94,6 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 rounded-lg hover:bg-white/5 transition-colors duration-200 items-center"
@@ -123,10 +119,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile Menu Panel ──
-          CRITICAL FIX: solid background, never transparent.
-          Uses mobile-menu-panel class from index.css for guaranteed opacity.
-      */}
       <div
         className={`md:hidden mobile-menu-panel transition-all duration-300 ease-in-out overflow-hidden ${
           menuOpen ? 'max-h-[420px] opacity-100' : 'max-h-0 opacity-0'
