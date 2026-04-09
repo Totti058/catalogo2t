@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import MotoCard from '../components/MotoCard';
 import { motos } from '../data/motos';
 
@@ -16,15 +16,6 @@ export default function Motos() {
     return ccMatch && marcaMatch;
   });
 
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <main className="min-h-screen pt-20 bg-[#0a0a0a]">
@@ -49,7 +40,7 @@ export default function Motos() {
         </div>
       </section>
 
-      <section className={`px-5 py-4 bg-[#0d0d0d] border-b border-[#1a1a1a] sticky top-16 md:top-20 z-30 backdrop-blur-md transition-all duration-300 ${isScrolled ? 'opacity-0 pointer-events-none md:opacity-100 md:pointer-events-auto' : 'opacity-100'}`}>
+      <section className="px-5 py-4 bg-[#0d0d0d] border-b border-[#1a1a1a] md:sticky md:top-20 z-30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3">
 
