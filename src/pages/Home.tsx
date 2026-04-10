@@ -13,9 +13,9 @@ export default function Home() {
           <div className="absolute top-0 w-px h-full bg-gradient-to-b from-transparent via-gold-700/20 to-transparent" style={{ right: '20%' }} />
           <div className="absolute top-0 w-px h-full bg-gradient-to-b from-transparent via-gold-700/10 to-transparent" style={{ right: '40%' }} />
 
-          <div className="absolute top-4 right-4 md:top-24 md:right-8 w-12 h-12 md:w-24 md:h-24 border border-gold-700/25 rotate-45" />
-          <div className="absolute top-8 right-8 md:top-28 md:right-12 w-8 h-8 md:w-16 md:h-16 border border-gold-600/12 rotate-45" />
-          <div className="absolute bottom-20 left-8 md:left-16 w-20 h-20 border border-gold-700/18 rotate-45" />
+          <div className="absolute top-24 right-8 md:right-16 w-24 h-24 border border-gold-700/25 rotate-45 hidden md:block" />
+          <div className="absolute top-28 right-12 md:right-20 w-16 h-16 border border-gold-600/12 rotate-45 hidden md:block" />
+          <div className="absolute bottom-20 left-8 md:left-16 w-20 h-20 border border-gold-700/18 rotate-45 hidden md:block" />
 
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-gold-500/4 rounded-full blur-3xl" />
 
